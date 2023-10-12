@@ -32,7 +32,7 @@ async function makeGeoJSON() {
           "properties": null
         }
         //push geom into it
-        tempFeature.geometry.coordinates.push(storeFeatures[index].Lng, storeFeatures[index].Lat);
+        tempFeature.geometry.coordinates.push(storeFeatures[index].longitude, storeFeatures[index].latitude);
         //set feature properties
         tempFeature.properties = storeFeatures[index];
         //add id to be used for sidebar connections
@@ -55,7 +55,6 @@ async function makeGeoJSON() {
       console.log(err);
     });
   return x
-
 }
 
 

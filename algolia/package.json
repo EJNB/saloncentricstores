@@ -22,5 +22,8 @@
     "prismic-dom": "^2.2.4",
     "prismic-javascript": "^3.0.2",
     "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "parcel": "2.7.0"
   }
 }

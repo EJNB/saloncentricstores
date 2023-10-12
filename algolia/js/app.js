@@ -65,6 +65,7 @@ function createPopup(currentFeature) {
     /** Check if there is already a popup on the map and if so, remove it */
     if (popups[0]) popups[0].remove();
     const popup = new mapboxgl.Popup({ closeOnClick: true })
+        // .setLngLat([Number(currentFeature.longitude), Number(currentFeature.latitude)])
         .setLngLat(currentFeature.geometry.coordinates)
         .setHTML("<h3>" + currentFeature.properties[config.popupInfo] + "</h3>")
         .addTo(map);
@@ -72,6 +73,8 @@ function createPopup(currentFeature) {
 
 function buildLocationList(storeLocations) {
     /* Add a new listing section to the sidebar. */
+
+    // console.log(storeLocations)
 
     const listings = document.getElementById("listings");
     listings.innerHTML = "";
@@ -458,6 +461,7 @@ geocoder.on("result", function (ev) {
 
 map.on("load", async function () {
     toggleSidebar('left');
+
     map.addControl(geocoder, "top-right");
 
        
